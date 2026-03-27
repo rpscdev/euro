@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Euro Klar Recruitment .EU — Night Shift Jobs in Germany</title>
+<meta name="description" content="Euro Klar Recruitment connects motivated workers with stable, well-paid employment across Germany and the EU. Up to €3,000/month net. No experience needed.">
+<meta property="og:title" content="Euro Klar Recruitment .EU">
+<meta property="og:description" content="Night shift jobs in Germany. €2,600–€3,000/mo net. Company car. No experience required.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0b1a3b;
+  --navy-mid: #122045;
+  --navy-light: #1a2d5a;
+  --cyan: #2ec4e8;
+  --cyan-bright: #4dd8f5;
+  --cyan-dark: #1a9bbf;
+  --gold: #f5c800;
+  --white: #ffffff;
+  --offwhite: #e8edf5;
+  --muted: #8899bb;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.star {
+  position: absolute; width: 2px; height: 2px;
+  background: var(--cyan); border-radius: 50%; opacity: 0;
+  animation: twinkle var(--dur) var(--delay) ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: var(--op); transform: scale(1.5); }
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(11,26,59,0.95), transparent);
+  backdrop-filter: blur(8px);
+  transition: background 0.3s;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem;
+  letter-spacing: -0.01em; color: var(--white);
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.nav-logo .k-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+  border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 900; color: var(--navy);
+  position: relative; overflow: hidden; flex-shrink: 0;
+}
+.nav-logo .k-mark::after {
+  content: 'x'; position: absolute; top: -2px; right: -2px;
+  font-size: 0.5rem; color: var(--gold);
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.85rem;
+  letter-spacing: 0.05em; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cyan); }
+.nav-cta {
+  background: var(--cyan) !important; color: var(--navy) !important;
+  padding: 8px 20px !important; border-radius: 100px !important;
+  font-weight: 600 !important; letter-spacing: 0.02em !important;
+}
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px; background: none; border: none;
+}
+.nav-hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--white); border-radius: 2px; transition: all 0.3s;
+}
+
+/* HERO */
+.hero {
+  position: relative; z-index: 1; min-height: 100vh;
+  display: flex; align-items: center; padding: 120px 5% 80px; overflow: hidden;
+}
+.hero-bg-circle { position: absolute; border-radius: 50%; pointer-events: none; }
+.hero-bg-circle.c1 {
+  width: 700px; height: 700px; top: -200px; right: -150px;
+  background: radial-gradient(circle, rgba(46,196,232,0.08) 0%, transparent 70%);
+  animation: breathe 8s ease-in-out infinite;
+}
+.hero-bg-circle.c2 {
+  width: 400px; height: 400px; bottom: 0; left: -100px;
+  background: radial-gradient(circle, rgba(46,196,232,0.05) 0%, transparent 70%);
+  animation: breathe 10s ease-in-out infinite reverse;
+}
+@keyframes breathe { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+
+.eu-ring {
+  position: absolute; right: 8%; top: 50%; transform: translateY(-50%);
+  width: 380px; height: 380px; opacity: 0.06;
+  animation: spin-slow 60s linear infinite;
+}
+.eu-ring svg { width: 100%; height: 100%; }
+@keyframes spin-slow { from{transform:translateY(-50%) rotate(0deg);} to{transform:translateY(-50%) rotate(360deg);} }
+
+.hero-content { max-width: 640px; position: relative; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(46,196,232,0.12); border: 1px solid rgba(46,196,232,0.3);
+  border-radius: 100px; padding: 6px 14px; font-size: 0.75rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan);
+  margin-bottom: 28px; animation: fadeUp 0.8s ease both;
+}
+.hero-badge .dot { width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+h1 {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; color: var(--white);
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+h1 .accent { color: var(--cyan); }
+h1 .eu { color: var(--gold); font-size: 0.7em; vertical-align: super; }
+
+.hero-sub {
+  font-size: 1.05rem; color: var(--muted); line-height: 1.7;
+  margin: 20px 0 36px; max-width: 480px; animation: fadeUp 0.8s ease 0.2s both;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.3s both; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+  color: var(--navy); font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 0.9rem; padding: 14px 28px; border-radius: 6px;
+  text-decoration: none; letter-spacing: 0.02em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(46,196,232,0.3);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(46,196,232,0.45); }
+
+.btn-secondary {
+  background: transparent; color: var(--offwhite);
+  border: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem;
+  padding: 14px 28px; border-radius: 6px; text-decoration: none;
+  letter-spacing: 0.02em; transition: border-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.hero-stats { display: flex; gap: 36px; margin-top: 56px; animation: fadeUp 0.8s ease 0.4s both; }
+.stat-num { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:var(--white); line-height:1; }
+.stat-num span { color: var(--cyan); }
+.stat-label { font-size:0.75rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-top:4px; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
+
+/* DIVIDER */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(46,196,232,0.3), transparent);
+  margin: 0 5%;
+}
+
+/* SECTIONS */
+.section { position: relative; z-index: 1; padding: 80px 5%; }
+.section-label { font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px; }
+.section-title { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:14px; }
+.section-sub { color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:500px;margin-bottom:48px; }
+
+/* JOB CARD */
+.job-card {
+  background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+  border: 1px solid rgba(46,196,232,0.2); border-radius: 12px;
+  padding: 32px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.job-card::before {
+  content:''; position:absolute; top:0;left:0;right:0;height:3px;
+  background: linear-gradient(to right, var(--cyan), var(--cyan-dark));
+}
+.job-card:hover { border-color: rgba(46,196,232,0.5); transform: translateY(-4px); }
+.job-header { display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap;gap:12px; }
+.job-title { font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700; }
+.job-salary {
+  background:rgba(46,196,232,0.15);border:1px solid rgba(46,196,232,0.3);
+  color:var(--cyan);font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;
+  padding:6px 14px;border-radius:6px;
+}
+.job-tags { display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px; }
+.tag {
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  color:var(--offwhite);font-size:0.78rem;padding:5px 12px;border-radius:100px;letter-spacing:0.03em;
+}
+.job-details { display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:24px; }
+.detail-item { display:flex;align-items:center;gap:8px; }
+.detail-icon { font-size:1rem;flex-shrink:0; }
+.detail-text { font-size:0.82rem;color:var(--muted);line-height:1.3; }
+.detail-text strong { color:var(--white);display:block;font-size:0.88rem; }
+.apply-btn {
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--cyan),var(--cyan-dark));
+  color:var(--navy);font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;
+  padding:12px 24px;border-radius:6px;text-decoration:none;letter-spacing:0.03em;
+  transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 16px rgba(46,196,232,0.25);
+}
+.apply-btn:hover { transform:translateY(-1px);box-shadow:0 6px 24px rgba(46,196,232,0.4); }
+
+/* FEATURES */
+.features-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px; }
+.feature-card {
+  background:var(--navy-mid);border:1px solid rgba(46,196,232,0.12);
+  border-radius:10px;padding:28px 24px;transition:border-color 0.3s,transform 0.3s;
+}
+.feature-card:hover { border-color:rgba(46,196,232,0.35);transform:translateY(-3px); }
+.feature-icon {
+  width:46px;height:46px;background:rgba(46,196,232,0.12);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px;
+}
+.feature-title { font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:8px; }
+.feature-desc { font-size:0.83rem;color:var(--muted);line-height:1.6; }
+
+/* STEPS */
+.steps { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;position:relative; }
+.steps::before {
+  content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;
+  background:linear-gradient(to right,transparent,rgba(46,196,232,0.3),transparent);
+}
+.step { text-align:center;padding:0 20px;position:relative; }
+.step-num {
+  width:56px;height:56px;background:linear-gradient(135deg,var(--cyan),var(--cyan-dark));
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;
+  color:var(--navy);margin:0 auto 18px;position:relative;z-index:1;
+}
+.step-title { font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:8px; }
+.step-desc { font-size:0.8rem;color:var(--muted);line-height:1.6; }
+
+/* COUNTRIES */
+.countries { display:flex;flex-wrap:wrap;gap:12px; }
+.country-pill {
+  background:var(--navy-mid);border:1px solid rgba(255,255,255,0.1);
+  border-radius:100px;padding:8px 16px;font-size:0.82rem;color:var(--offwhite);
+  display:flex;align-items:center;gap:8px;transition:border-color 0.2s;
+}
+.country-pill:hover { border-color:var(--cyan); }
+
+/* CTA STRIP */
+.cta-strip {
+  position:relative;z-index:1;margin:0 5% 80px;
+  background:linear-gradient(135deg,var(--navy-light) 0%,rgba(46,196,232,0.12) 100%);
+  border:1px solid rgba(46,196,232,0.25);border-radius:16px;padding:50px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:28px;overflow:hidden;
+}
+.cta-strip::before {
+  content:'x';position:absolute;right:48px;top:50%;transform:translateY(-50%);
+  font-size:8rem;color:rgba(46,196,232,0.04);pointer-events:none;
+}
+.cta-text h2 { font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:6px; }
+.cta-text p { color:var(--muted);font-size:0.9rem; }
+.cta-actions { display:flex;gap:12px;flex-wrap:wrap; }
+
+/* FOOTER */
+footer {
+  position:relative;z-index:1;padding:40px 5%;
+  border-top:1px solid rgba(255,255,255,0.07);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--white); }
+.footer-logo span { color:var(--cyan); }
+.footer-info { font-size:0.78rem;color:var(--muted);text-align:center; }
+.footer-contact { font-size:0.8rem;color:var(--muted);text-align:right; }
+.footer-contact a { color:var(--cyan);text-decoration:none; }
+.eu-stars-row { display:flex;justify-content:center;gap:8px;margin-bottom:6px; }
+.eu-star { color:var(--gold);font-size:0.6rem; }
+
+/* SCROLL REVEAL */
+.reveal { opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease; }
+.reveal.visible { opacity:1;transform:translateY(0); }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links { display:none;flex-direction:column;gap:16px; }
+  .nav-links.open {
+    display:flex;position:fixed;inset:0;top:60px;
+    background:rgba(11,26,59,0.98);padding:48px 5%;z-index:99;
+    align-items:center;justify-content:center;font-size:1.1rem;
+  }
+  .nav-hamburger { display:flex; }
+  .eu-ring { display:none; }
+  .hero { padding-top:100px; }
+  .steps::before { display:none; }
+  .steps { gap:32px; }
+  .cta-strip { padding:36px 24px; }
+  .cta-strip::before { display:none; }
+  .hero-stats { gap:24px; }
+  footer { text-align:center; }
+  .footer-contact { text-align:center; }
+  .footer-info { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    <div class="k-mark">K</div>
+    Euro Klar <span style="color:var(--cyan);margin-left:2px">.EU</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#jobs" onclick="closeNav()">Jobs</a>
+    <a href="#why" onclick="closeNav()">Why Us</a>
+    <a href="#process" onclick="closeNav()">Process</a>
+    <a href="https://wa.me/491785592869?text=Applying%20with%20Driving%20License" class="nav-cta" target="_blank" rel="noopener noreferrer">Apply Now</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-circle c1"></div>
+  <div class="hero-bg-circle c2"></div>
+  <div class="eu-ring">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" stroke="rgba(46,196,232,1)" stroke-width="1" stroke-dasharray="4 6"/>
+      <g fill="rgba(245,200,0,1)">
+        <text x="100" y="16" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="147" y="32" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="179" y="73" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="179" y="127" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="147" y="168" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="100" y="188" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="53" y="168" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="21" y="127" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="21" y="73" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="53" y="32" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="130" y="20" text-anchor="middle" font-size="10">&#9733;</text>
+        <text x="70" y="20" text-anchor="middle" font-size="10">&#9733;</text>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span>Now Hiring Across Germany</div>
+    <h1>Your Career<br>Starts <span class="accent">Klar<span class="eu">EU</span></span></h1>
+    <p class="hero-sub">
+      Euro Klar Recruitment connects motivated workers with stable, well-paid employment across Germany and the European Union. Night shifts, real wages, real opportunities.
+    </p>
+    <div class="hero-actions">
+      <a href="#jobs" class="btn-primary">View Open Positions</a>
+      <a href="#process" class="btn-secondary">How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">&#8364;3<span>k</span></div>
+        <div class="stat-label">Max Monthly Net</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6<span>mo</span></div>
+        <div class="stat-label">Contract Duration</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0<span>exp</span></div>
+        <div class="stat-label">Needed to Start</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- JOBS -->
+<section class="section" id="jobs">
+  <div class="section-label">Open Positions</div>
+  <div class="section-title">Current Vacancies</div>
+  <p class="section-sub">We're actively recruiting for the following roles. All positions include paid training and a company vehicle.</p>
+  <div class="job-card reveal">
+    <div class="job-header">
+      <div>
+        <div class="job-title">Night Shift Freezer Cleaning Operative</div>
+        <div style="color:var(--muted);font-size:0.82rem;margin-top:4px;">&#127465;&#127466; Baden-W&#252;rttemberg, Germany &middot; Immediate Start</div>
+      </div>
+      <div class="job-salary">&#8364;2,600 &ndash; &#8364;3,000 / mo</div>
+    </div>
+    <div class="job-tags">
+      <span class="tag">Night Shift</span>
+      <span class="tag">Full-Time</span>
+      <span class="tag">6-Month Contract</span>
+      <span class="tag">No Experience Required</span>
+      <span class="tag">EU Citizens</span>
+      <span class="tag">Driving License Required</span>
+    </div>
+    <div class="job-details">
+      <div class="detail-item">
+        <span class="detail-icon">&#128205;</span>
+        <div class="detail-text"><strong>Heilbronn / Gemmingen</strong>Pickup within 20 km radius</div>
+      </div>
+      <div class="detail-item">
+        <span class="detail-icon">&#128345;</span>
+        <div class="detail-text"><strong>Mon Night &ndash; Sat Morning</strong>Night shifts only</div>
+      </div>
+      <div class="detail-item">
+        <span class="detail-icon">&#128663;</span>
+        <div class="detail-text"><strong>Company Car + Fuel</strong>Weekly travel in teams of 3&ndash;5</div>
+      </div>
+      <div class="detail-item">
+        <span class="detail-icon">&#127968;</span>
+        <div class="detail-text"><strong>Accommodation Available</strong>On request (rent required)</div>
+      </div>
+    </div>
+    <a href="https://wa.me/491785592869?text=Applying%20with%20Driving%20License" class="apply-btn" id="contact" target="_blank" rel="noopener noreferrer">
+      &#128241; Apply via WhatsApp
+    </a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="section-label">Why Euro Klar</div>
+  <div class="section-title">What We Offer</div>
+  <p class="section-sub">Beyond the salary, we make sure you're set up to succeed from day one.</p>
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128176;</div>
+      <div class="feature-title">Competitive NET Salary</div>
+      <div class="feature-desc">Take home &#8364;2,600&ndash;&#8364;3,000 per month including night bonuses. What you see is what you get.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128663;</div>
+      <div class="feature-title">Company Vehicle &amp; Fuel</div>
+      <div class="feature-desc">Travel to sites across Germany in our company vehicles. Fuel and transport fully covered.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128203;</div>
+      <div class="feature-title">Paid Training Week</div>
+      <div class="feature-desc">No experience? No problem. You'll be fully trained and paid during your onboarding week.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#129309;</div>
+      <div class="feature-title">Team Environment</div>
+      <div class="feature-desc">Work in small close-knit teams of 3&ndash;5. Travel together, work together, grow together.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128196;</div>
+      <div class="feature-title">Stable Employment</div>
+      <div class="feature-desc">6-month contracts with the real prospect of long-term work for reliable candidates.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#127968;</div>
+      <div class="feature-title">Housing Support</div>
+      <div class="feature-desc">Need a place to stay? We can arrange accommodation near the work location on request.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-label">How It Works</div>
+  <div class="section-title">From Application to First Shift</div>
+  <p class="section-sub">Our process is fast and straightforward. Most applicants are working within one week of first contact.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <div class="step-title">Message Us on WhatsApp</div>
+      <div class="step-desc">Send your name, location, and confirm you hold a valid driving license. We respond within hours.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <div class="step-title">Quick Phone Interview</div>
+      <div class="step-desc">A brief call to confirm availability, night shift readiness, and answer any questions you have.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <div class="step-title">Paid Training Week</div>
+      <div class="step-desc">You join a team, get fully trained on the job, and receive your first payment at week's end.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">4</div>
+      <div class="step-title">Sign Your Contract</div>
+      <div class="step-desc">A 6-month contract is signed, locking in your salary, schedule, and company vehicle arrangement.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EU COUNTRIES -->
+<section class="section">
+  <div class="section-label">Who Can Apply</div>
+  <div class="section-title">Open to EU Citizens</div>
+  <p class="section-sub">We welcome applicants from across the European Union. If you have the right to work in Germany and a valid driving license, you're eligible.</p>
+  <div class="countries reveal">
+    <div class="country-pill">&#127465;&#127466; Germany</div>
+    <div class="country-pill">&#127477;&#127473; Poland</div>
+    <div class="country-pill">&#127479;&#127476; Romania</div>
+    <div class="country-pill">&#127463;&#127468; Bulgaria</div>
+    <div class="country-pill">&#127469;&#127482; Hungary</div>
+    <div class="country-pill">&#127464;&#127487; Czech Republic</div>
+    <div class="country-pill">&#127480;&#127472; Slovakia</div>
+    <div class="country-pill">&#127469;&#127479; Croatia</div>
+    <div class="country-pill">&#127473;&#127481; Lithuania</div>
+    <div class="country-pill">&#127473;&#127483; Latvia</div>
+    <div class="country-pill">&#127466;&#127466; Estonia</div>
+    <div class="country-pill">&#127477;&#127481; Portugal</div>
+    <div class="country-pill">&#127470;&#127481; Italy</div>
+    <div class="country-pill">&#127466;&#127480; Spain</div>
+    <div class="country-pill">+ All EU States</div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip reveal">
+  <div class="cta-text">
+    <h2>Ready to Start Earning?</h2>
+    <p>Message us today &mdash; most candidates are working within 7 days of applying.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="https://wa.me/491785592869?text=Applying%20with%20Driving%20License" class="btn-primary" target="_blank" rel="noopener noreferrer">&#128241; Apply on WhatsApp</a>
+    <a href="mailto:info@euroklar.eu" class="btn-secondary">&#9993; Email Us</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Euro Klar<span>.EU</span></div>
+    <div style="font-size:0.72rem;color:var(--muted);margin-top:4px;">Recruitment across the European Union</div>
+  </div>
+  <div class="footer-info">
+    <div class="eu-stars-row">
+      <span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span>
+      <span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span>
+      <span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span>
+      <span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span><span class="eu-star">&#9733;</span>
+    </div>
+    <div>&copy; 2025 Euro Klar Recruitment &middot; All rights reserved</div>
+  </div>
+  <div class="footer-contact">
+    <div>WhatsApp: <a href="https://wa.me/491785592869" target="_blank" rel="noopener noreferrer">+49 178 5592869</a></div>
+    <div style="margin-top:4px;">Email: <a href="mailto:info@euroklar.eu">info@euroklar.eu</a></div>
+  </div>
+</footer>
+
+<script>
+/* STARFIELD */
+(function(){
+  var c=document.getElementById('stars');
+  for(var i=0;i<80;i++){
+    var s=document.createElement('div');
+    s.className='star';
+    s.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;'
+      +'--dur:'+(3+Math.random()*6)+'s;--delay:'+Math.random()*8+'s;'
+      +'--op:'+(0.2+Math.random()*0.5)+';'
+      +'width:'+(1+Math.random()*2)+'px;height:'+(1+Math.random()*2)+'px';
+    c.appendChild(s);
+  }
+})();
+
+/* SCROLL REVEAL */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){e.target.classList.add('visible');},i*80);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+
+/* MOBILE NAV */
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+function closeNav(){
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+/* NAV SCROLL */
+window.addEventListener('scroll',function(){
+  var nav=document.getElementById('mainNav');
+  nav.style.background=window.scrollY>40
+    ?'rgba(11,26,59,0.97)'
+    :'linear-gradient(to bottom,rgba(11,26,59,0.95),transparent)';
+});
+</script>
+</body>
+</html>
